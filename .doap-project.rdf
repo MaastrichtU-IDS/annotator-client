@@ -1,8 +1,0 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:doap="http://usefulinc.com/ns/doap#">
- <doap:Project>
-  <doap:name>annotator-client</doap:name>
-  <doap:homepage rdf:resource="https://github.com/MaastrichtU-IDS/annotator-client" />
-  <doap:programming-language>python</doap:programming-language>
-  <doap:license rdf:resource="https://github.com/MaastrichtU-IDS/annotator-client/blob/master/LICENSE"/>
- </doap:Project>
-</rdf:RDF>
