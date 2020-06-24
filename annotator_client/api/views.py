@@ -5,16 +5,19 @@ from marshmallow import ValidationError
 from annotator_client.extensions import apispec
 from annotator_client.api.resources import AnnotationResource, AnnotationList, UserResource, UserList
 from annotator_client.api.schemas import UserSchema
-
+from annotator_client.services import rest_client_service
 
 blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
 api = Api(blueprint)
-
 api.add_resource(UserResource, "/users/<int:user_id>", endpoint="user_by_id")
 api.add_resource(AnnotationResource, "/annotations/<int:annotation_id>", endpoint="annotation_by_id")
 api.add_resource(AnnotationList, "/annotations", endpoint="annotations")
 api.add_resource(UserList, "/users", endpoint="users")
 
+@blueprint.route('/fetch', methods = ['POST'])
+def fetch_annotations():
+    rest_client_service.fetch_annotations("61ABW53o")
+    return ''
 
 @blueprint.before_app_first_request
 def register_views():
