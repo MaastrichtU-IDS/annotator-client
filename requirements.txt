@@ -1,9 +1,11 @@
+dnspython
 marshmallow>=3
 flask
 flask-restful
 flask-migrate
 flask-sqlalchemy
 flask-marshmallow
+flask-mongoengine
 flask-jwt-extended
 marshmallow-sqlalchemy
 python-dotenv

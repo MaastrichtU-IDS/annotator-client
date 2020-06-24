@@ -2,6 +2,7 @@ from flask import Flask
 
 from annotator_client import auth, api
 from annotator_client.extensions import db, jwt, migrate, apispec
+from annotator_client.services.mongodb_service import initialize_db
 
 
 def create_app(testing=False, cli=False):
@@ -16,9 +17,12 @@ def create_app(testing=False, cli=False):
     configure_extensions(app, cli)
     configure_apispec(app)
     register_blueprints(app)
+    initialize_mongodb(app)
 
     return app
 
+def initialize_mongodb(app):
+    initialize_db(app)
 
 def configure_extensions(app, cli):
     """configure flask extensions
